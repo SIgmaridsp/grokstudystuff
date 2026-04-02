@@ -1,17 +1,20 @@
 table = []
 sizeNotSet = True
-# replace dots with x every tim command given
-y = 0
+# replace dots with x every time command given
 x = 0
+y = 0
 while True:
     if sizeNotSet == True:
         size = int(input("Grid size: "))
     sizeNotSet = False
-    for k in range(size):
-        row = []
-        for j in range(size):
-            row.append(".")
-        table.append(row)
+    if not table:
+        for k in range(size):
+            row = []
+            for j in range(size):
+                row.append(".")
+
+            table.append(row)
+
     table[x][y] = "x"
     for row in table:
         print("".join(row))

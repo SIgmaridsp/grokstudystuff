@@ -6,7 +6,7 @@
 # print out the pairs that occurs more than once
 
 bigrams = {}
-
+# SLIDING WINDOW
 
 a = 0
 appear = 0
@@ -17,11 +17,11 @@ while a != "":
     break
   resp = ask.strip().split()
   print(resp)
-  for index, value in enumerate(resp):
-    if(index+1 < len(resp)):
-      eeee = (resp[index] + " "+ resp[index+1])
-      print(eeee)
-      bigrams[eeee] = bigrams.get(eeee, 0) + 1
+  for index, value in enumerate(resp): 
+    if(index+1 < len(resp)): # Makes sure not go out of sliding range
+      eeee = (resp[index] + " "+ resp[index+1]) # putting stuff together
+      print(eeee) 
+      bigrams[eeee] = bigrams.get(eeee, 0) + 1 # If same value add to 1 Else set to 0 
 
 
 print(bigrams)
