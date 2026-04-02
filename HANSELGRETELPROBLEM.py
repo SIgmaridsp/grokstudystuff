@@ -4,8 +4,8 @@ def init_table(size):
         row = []
         for j in range(size):
             row.append(".")
-
         tb.append(row)
+        tb[x][y] = "x"
     return tb
 
 
@@ -21,7 +21,6 @@ while True:
     if not table:
         table = init_table(size)
 
-    table[x][y] = "x"
     for row in table:
         print("".join(row))
     direct = input("Direction: ")
@@ -29,11 +28,11 @@ while True:
         break
     else:
         if direct == "up":
-            y -= 1
-        elif direct == "down":
-            y += 1
-        elif direct == "left":
             x -= 1
-        elif direct == "right":
+        elif direct == "down":
             x += 1
-        table[y][x] = "x"
+        elif direct == "left":
+            y -= 1
+        elif direct == "right":
+            y += 1
+        table[x][y] = "x"
