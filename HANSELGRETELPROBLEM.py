@@ -1,3 +1,14 @@
+def init_table(size):
+    tb=[];
+    for k in range(size):
+        row = []
+        for j in range(size):
+            row.append(".")
+
+        tb.append(row)
+    return tb
+
+
 table = []
 sizeNotSet = True
 # replace dots with x every time command given
@@ -8,12 +19,7 @@ while True:
         size = int(input("Grid size: "))
     sizeNotSet = False
     if not table:
-        for k in range(size):
-            row = []
-            for j in range(size):
-                row.append(".")
-
-            table.append(row)
+        table = init_table(size)
 
     table[x][y] = "x"
     for row in table:
